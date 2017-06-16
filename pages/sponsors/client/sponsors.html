@@ -1,0 +1,18 @@
+<template name="sponsors">
+
+	<h1>We wish we had these sponsors!</h1>
+	{{today}} is today's date.
+	<h2>Form elements</h2>
+	<input id="thedate" type="date">
+	<button class="btn btn-danger btn-lg">Don't Push
+  </button>
+	<table class="table table-bordered table-striped">
+		<tbody>
+		{{#each s in sponsorData}}
+			<tr>
+				<td>{{s.name}}</td> <td>{{s.amt}}</td>
+		  </tr>
+		{{/each}}
+	</tbody>
+ </table>
+</template>

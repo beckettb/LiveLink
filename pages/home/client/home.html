@@ -1,0 +1,195 @@
+<template name="home">
+
+	<form action="/action_page.php">
+
+	  <div class="container">
+	    <label><b>Username</b></label>
+	    <input type="text" placeholder="Enter Username" name="uname" required>
+
+	    <label><b>Password</b></label>
+	    <input type="password" placeholder="Enter Password" name="psw" required>
+
+	    <button type="submit">Login</button>
+	    <input type="checkbox" checked="checked"> Remember me
+	  </div>
+
+	  <div class="container" style="background-color:#f1f1f1">
+	    <button type="button" class="cancelbtn">Cancel</button>
+	    <span class="psw">Forgot <a href="#">password?</a></span>
+	  </div>
+	</form>
+
+	<div class="jumbotron">
+		<h2>Home</h2>
+	</div>
+
+	<div class="alert">
+	  <button type="button" class="close btn-danger btn-lg" data-dismiss="alert">&times;</button>
+	  <p class="text-danger"><strong>Warning!</strong> This is an alert, feel free to close it.</p>
+	</div>
+
+	<p>Created during the <a href="https://www.brandeis.edu/jbs/upcomingprograms/voiceweb/index.html">Voice, Web, and Mobile Applications</a> summer
+	session 2017 at Brandeis University as taught by Timothy Hickey and Marie Meteer</p>
+
+	<span class="badge badge-success">This is a test badge</span>
+	<span class="label label-important">1</span>
+
+	<div class="row">
+	 <div class="col-md-3 col-md-offset-2 bg-danger"> <img src="images/example1.jpg" width="100%"></div>
+	 <div class="col-md-3 col-md-offset-2 bg-info"> <img src="https://i.ytimg.com/vi/m5d1FlSeF-M/maxresdefault.jpg" width="100%"></div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-5 col-md-offset-1 bg-info">
+
+			<h1>Lists</h1>
+			<p>Here is an ordered and unordered list</p>
+
+			<h2> Ordered list: </h2>
+			<ol>
+				<li>Item one</li>
+				<li>Item two</li>
+				<li>Item three</li>
+			</ol>
+
+			<h2> Unordered list: </h2>
+			<ul>
+				<li>Item uno</li>
+				<li>Item dos</li>
+				<li>Item tres</li>
+			</ul>
+
+		</div>
+
+		<div class="col-md-3 col-md-offset-1 bg-warning">
+			<h1>Table</h1>
+
+			<p> Here is an example of a table: </p>
+
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr><th>Col1</th><th>Col2</th></tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>4</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<caption>footer</caption>
+				</tfoot>
+			</table>
+
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="col-md-5 col-md-offset-1 bg-danger">
+			<h1>Form and form elements</h1><hr>
+
+			<h4>Standard input</h4>
+			<form>
+				<!-- normal input text -->
+			  <div class="form-group">
+			    <label for="formGroupExampleInput">Example label</label>
+			    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+			  </div>
+			</form>
+			<hr>
+
+			<!-- text area -->
+			<h4>Text area</h4>
+			<form action="/action_page.php" id="usrform">
+  			Name: <input type="text" name="usrname">
+  			<input type="submit">
+			</form>
+			<textarea name="comment" form="usrform">Enter text here...</textarea><br>
+			<hr>
+
+			<!-- buttons -->
+
+			<h4>Buttons</h4>
+
+				<!--standard buttons-->
+
+				<button type="button" class="btn btn-info btn-lg">Button</button>
+				<input type="button" class="btn btn-danger" value="Input Button">
+				<hr>
+
+				<!--radio button-->
+				<h4>Radio button</h4>
+				<div class="form-check">
+				  <label class="form-check-label">
+				    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+				    Option one
+				  </label>
+				</div>
+				<div class="form-check">
+  				<label class="form-check-label">
+    				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+    				Option two
+  				</label>
+				</div>
+				<hr>
+
+			<!-- Dropdown -->
+			<h4>Dropdown menu</h4>
+			<div class="dropdown">
+  			<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+  			<span class="caret"></span></button>
+  			<ul class="dropdown-menu">
+    			<li><a href="#">Example1</a></li>
+    			<li><a href="#">Example2</a></li>
+    			<li><a href="#">Example3</a></li>
+  			</ul>
+			</div>
+			<hr>
+
+			<!-- Password field -->
+			<h4>Password field</h4>
+
+			<div class="form-group">
+    		<label for="exampleInputPassword1">Password:</label>
+    		<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password here">
+  		</div>
+			<hr>
+
+			<!--Date input-->
+			<h4>Date input</h4>
+
+			<div class="form-group">
+  			<label for="example-date-input" class="col-2 col-form-label">Date</label>
+  			<div class="col-10">
+    			<input class="form-control" type="date" value="" id="example-date-input">
+  			</div>
+			</div>
+			<hr>
+
+			<!--Color selector-->
+			<h4>Color selector</h4>
+
+			<select id="colorselector">
+		    <option value="106" data-color="#A0522D">sienna</option>
+		    <option value="47" data-color="#CD5C5C" selected="selected">indianred</option>
+		    <option value="87" data-color="#FF4500">orangered</option>
+		    ...
+		    <option value="15" data-color="#DC143C">crimson</option>
+		    <option value="24" data-color="#FF8C00">darkorange</option>
+		    <option value="78" data-color="#C71585">mediumvioletred</option>
+			</select>
+
+			<script>
+			    $('#colorselector').colorselector();
+			</script>
+			<hr>
+
+	</div>
+	</div>
+
+</template>
