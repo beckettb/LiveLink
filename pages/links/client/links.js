@@ -10,9 +10,23 @@ const links =
       const userId = Meteor.userId;
       instance.$('#yourstatus').val("");
       elt.preventDefault();
-      for(item of Connections.find().fetch()){Connections.remove(item._id)};
-      Connections.insert({yourstatus:yourstatus});
-      Everylink.insert({yourstatus:yourstatus, userId:userId});
+      for(item of Connections.find().fetch()){Connections.remove(item._id)}; //removes previous entries
+
+      Meteor.call('connections.remove',)
+
+      var insstatus = {yourstatus:yourstatus,
+        userId:userId,
+        owner:Meteor.userId()
+      };
+      Meteor.call('connections.insert',insstatus)
+      //Connections.insert(insstatus);
+
+      var inseverylink = {yourstatus:yourstatus,
+        userId:userId,
+        owner:Meteor.userId()
+      };
+      Meteor.call('everylink.insert',inseverylink)
+      //Everylink.insert(inseverylink);
       //for(item of Everylink.find().fetch()){Everylink.remove(item._id)};
 
       //check if user beforehand
@@ -37,7 +51,11 @@ const links =
       console.dir(this);
       console.log(this);
       console.log(this.l._id);
-      Everylink.remove(this.l._id);
+
+      var removeall = this.l._id;
+      if (Meteor.userId()==this.l.owner){
+        Meteor.call('everylink.remove', removeall, this.l)
+      }
     }
 })
 
