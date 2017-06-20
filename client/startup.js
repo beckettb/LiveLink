@@ -21,4 +21,4 @@ Template.registerHelper('userEmail',
 
 // this allows the client access to all the user information
 // this should be removed when the app is deployed
-Meteor.subscribe('userList');
+//Meteor.subscribe('userList');

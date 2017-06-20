@@ -8,7 +8,7 @@ insecure@1.0.7
 twbs:bootstrap
 iron:router
 sacha:spin
-accounts-password@1.3.6
+accounts-password
 jparker:gravatar
 ian:accounts-ui-bootstrap-3
 meteor-base@1.0.4

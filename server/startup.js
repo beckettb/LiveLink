@@ -1,4 +1,4 @@
-Meteor.startup(function(){
+/*Meteor.startup(function(){
 	if (Pokedex.find().count()==0){
 		console.log("Importing Pokedex to db")
 
@@ -19,3 +19,4 @@ Meteor.startup(function(){
 });
 
 });
+*/

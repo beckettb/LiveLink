@@ -3,32 +3,55 @@
 		<h2>Your links</h2>
 	</div>
 
-Here are your links:
-<table class="table table-bordered table-striped">
-	<thead>
-		<tr><th>Name</th><th>Status</th></tr>
-	</thead>
-	<tbody>
-		{{#each person in links}}
-  		{{> teamrow t=person}}
-		{{/each}}
-	</tbody>
-</table>
-
-<ul>
-	{{#each link in links}}
-		<li>
-			{{link.name}}
-		</li>
-	{{/each}}
-</ul>
+  {{> setstatus}}
+  {{> showyour}}
+  {{> showevery}}
 
 </template>
 
+<template name="setstatus">
+  <form>
+    <div class="form-group bg-info">
+      <label for="formGroupExampleInput">Your status:</label>
+      <input type="text" class="form-control" id="yourstatus" placeholder="Enter your status here, it will be broadcast to all of your links">
+      <button id="setstatus" class="btn btn-primary"> Set status
+      </button>
+    </div>
+  </form>
+</template>
 
-<template name="teamrow">
+<template name="showyour">
+  {{#each x in showing}}
+    <p>Your status is currently set to: "{{x.yourstatus}}"</p>
+  {{/each}}
+</template>
+
+<template name="showevery">
+  <p class="bg-info">Here are all links:</p>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr><th>Name</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      {{#each item in Everylink}}
+        {{> linkrow l=item}}
+      {{/each}}
+    </tbody>
+  </table>
+  {{#each x in showingevery}}
+    <p>Name: {{x.userId}} Status: {{x.yourstatus}}</p>
+  {{/each}}
+</template>
+
+
+<template name="linkrow">
    <tr>
-   	  <td>{{t.name}}</td>
-   	  <td>{{t.status}}</td>
+   	  <td>{{l.userId}}</td>
+   	  <td>{{l.yourstatus}}</td>
    </tr>
+   <button class="btn btn-danger">Delete entry for everyone</button>
+</template>
+
+<template name="deletelink">
+
 </template>
