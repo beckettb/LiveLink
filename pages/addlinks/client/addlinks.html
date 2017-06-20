@@ -3,7 +3,11 @@
 		<h2>Add links</h2>
 	</div>
 
-  {{> addlink}}
+  {{#if currentUser}}
+    {{> addlink}}
+  {{else}}
+    You aren't a current user, please log in to access the app!
+  {{/if}}
 
 </template>
 

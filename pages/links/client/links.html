@@ -3,9 +3,14 @@
 		<h2>Your links</h2>
 	</div>
 
-  {{> setstatus}}
-  {{> showyour}}
-  {{> showevery}}
+
+  {{#if currentUser}}
+    {{> setstatus}}
+    {{> showyour}}
+    {{> showevery}}
+  {{else}}
+    You aren't a current user, please log in to access the app!
+  {{/if}}
 
 </template>
 
