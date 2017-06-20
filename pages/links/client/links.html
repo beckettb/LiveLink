@@ -3,7 +3,6 @@
 		<h2>Your links</h2>
 	</div>
 
-
   {{#if currentUser}}
     {{> setstatus}}
     {{> showyour}}
@@ -37,11 +36,11 @@
     <thead>
       <tr><th>Name</th><th>Status</th></tr>
     </thead>
+    {{#each item in showingevery}}
     <tbody>
-      {{#each item in Everylink}}
         {{> linkrow l=item}}
-      {{/each}}
     </tbody>
+    {{/each}}
   </table>
   {{#each x in showingevery}}
     <p>Name: {{x.userId}} Status: {{x.yourstatus}}</p>
@@ -52,9 +51,8 @@
 <template name="linkrow">
    <tr>
    	  <td>{{l.userId}}</td>
-   	  <td>{{l.yourstatus}}</td>
+   	  <td>{{l.yourstatus}}&nbsp;<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
    </tr>
-   <button class="btn btn-danger">Delete entry for everyone</button>
 </template>
 
 <template name="deletelink">
