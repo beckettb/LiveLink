@@ -30,3 +30,4 @@ reactive-dict@1.1.8
 autopublish@1.0.7
 shell-server
 google-config-ui
+twbs:bootstrap
