@@ -31,7 +31,7 @@ const links =
 
       //check if user beforehand
       Contacts.insert({
-        name: "",
+        name: "Not available yet",
         userId: Meteor.userId()
       });
 
