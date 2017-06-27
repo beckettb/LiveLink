@@ -13,6 +13,6 @@ body {
 @media only screen and (orientation: portrait) {
     body {
         background-color: pink;
-        color: white;
+        color: purple;
     }
 }
