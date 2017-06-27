@@ -1,6 +1,7 @@
 <template name="addlinks">
   <div class="jumbotron">
 		<h2>Add links</h2>
+    <i>Currently unavailable</i>
 	</div>
 
   {{#if currentUser}}
@@ -13,11 +14,13 @@
 
 <template name="addlink">
   <form>
-    <div class="form-group bg-info">
-      <label for="formGroupExampleInput">Link contact's username:</label>
-      <input type="text" class="form-control" id="username" placeholder="Enter a friend or colleague's username here to add them as a link">
-      <button id="addlink" class="btn btn-primary"> Add link
-      </button>
+    <div class="contactbox">
+      <div class="form-group">
+        <label for="formGroupExampleInput">Link contact's username:</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter a friend or colleague's username here to add them as a link">
+        <button id="addlink" class="btn btn-primary"> Add link
+        </button>
+      </div>
     </div>
   </form>
 </template>

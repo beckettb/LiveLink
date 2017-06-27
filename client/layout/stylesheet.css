@@ -1,0 +1,18 @@
+h1 {
+  color: steelblue;
+}
+
+h2 {
+  color: steelblue;
+}
+
+body {
+  background-color: silver;
+}
+
+@media only screen and (orientation: portrait) {
+    body {
+        background-color: pink;
+        color: white;
+    }
+}

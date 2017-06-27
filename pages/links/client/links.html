@@ -15,9 +15,15 @@
 
 <template name="setstatus">
   <form>
-    <div class="form-group bg-info">
+    <div class="userbox">
+      <label> Your username </label>
+      <br>
+      <input type="text" class="form-control" id="youruser" placeholder="Enter your username here, it will be shown to all users of this site alongside your status once you set it.">
+      <br>
+    </div>
+    <div class="statusbox">
       <label for="formGroupExampleInput">Your status:</label>
-      <input type="text" class="form-control" id="yourstatus" placeholder="Enter your status here, it will be broadcast to all of your links">
+      <input type="text" class="form-control" id="yourstatus" placeholder="Enter your status here, it will be broadcast to all users of this site once you set it.">
       <button id="setstatus" class="btn btn-primary"> Set status
       </button>
     </div>
@@ -25,32 +31,40 @@
 </template>
 
 <template name="showyour">
-  {{#each x in showing}}
-    <p>Your status is currently set to: "{{x.yourstatus}}"</p>
-  {{/each}}
+  <div class="userstatusbox">
+    {{#each x in showing}}
+      <p><b>Your name is currently set to: "{{x.youruser}}""</b></p>
+      <p><b>Your status is currently set to: "{{x.yourstatus}}"</b></p>
+    {{/each}}
+  </div>
+  <br>
 </template>
 
 <template name="showevery">
-  <p class="bg-info">Here are all links:</p>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr><th>Name</th><th>Status</th></tr>
-    </thead>
-    {{#each item in showingevery}}
-    <tbody>
-        {{> linkrow l=item}}
-    </tbody>
-    {{/each}}
-  </table>
-  {{#each x in showingevery}}
-    <p>Name: {{x.userId}} Status: {{x.yourstatus}}</p>
-  {{/each}}
+  <div class="linkbox">
+    <p><b>Here are all links:</b></p>
+    <div class="linktable">
+      <table class="table table-bordered">
+        <thead>
+          <tr><th>Name</th><th>Status</th></tr>
+        </thead>
+        {{#each item in showingevery}}
+        <tbody>
+            {{> linkrow l=item}}
+        </tbody>
+        {{/each}}
+      </table>
+    </div>
+    <!-- {{#each x in showingevery}}
+      <p>Name: {{x.youruser}} Status: {{x.yourstatus}}</p>
+    {{/each}} -->
+  </div>
 </template>
 
 
 <template name="linkrow">
    <tr>
-   	  <td>{{l.userId}}</td>
+   	  <td>{{l.youruser}}</td>
    	  <td>{{l.yourstatus}}&nbsp;<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
    </tr>
 </template>

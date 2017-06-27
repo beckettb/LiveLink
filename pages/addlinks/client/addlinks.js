@@ -4,11 +4,11 @@ Template.addlink.events({
     instance.$('#username').val("");
     elt.preventDefault();
 
-    {{#if currentUser}}
+    /*{{#if currentUser}}
       Contacts.insert({
         userId: Meteor.userId()
         status: not available yet
       });
-    {{/if}}
+    {{/if}}*/
   }
 })

@@ -1,0 +1,121 @@
+.aliceblue{
+  background-color: aliceblue;
+}
+
+.flex{
+        width: 800;
+        height: 600;
+        font: 14px Arial;
+
+        display: flex;
+        flex-direction: row;
+}
+
+.flex > div {
+        flex: 1 1 auto;
+        width: 30px;
+        transition: width 0.7s ease-out;
+}
+
+.flex > div:nth-child(1){
+  background: #bfe2f2;
+  padding: 20px;
+  order: 1;
+}
+
+.flex > div:nth-child(2){
+  background: #b3c6f2;
+  padding: 20px;
+  order: 2;
+}
+.flex > div:nth-child(3){
+  background: #8eadde;
+  padding: 20px;
+  order: 3;
+}
+
+.flex > div:hover {
+    width: 200px;
+}
+
+@media all and (max-width: 800px) {
+    #flex {
+        width: auto;
+        height: auto;
+    }
+}
+
+.number1 {
+  display: block;
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -o-transform: matrix(-1, 0, 0, 1, 0, 0);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.number2 {
+  display: block;
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -o-transform: matrix(-1, 0, 0, 1, 0, 0);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.number3 {
+  display: block;
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -o-transform: matrix(-1, 0, 0, 1, 0, 0);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.mirror {
+  display: block;
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -o-transform: matrix(-1, 0, 0, 1, 0, 0);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.flex2{
+        width: 800;
+        height: 600;
+        font: 14px Arial;
+
+        display: flex;
+        flex-direction: row;
+}
+
+.flex2 > div {
+        flex: 1 1 auto;
+        width: 30px;
+        transition: width 0.7s ease-out;
+}
+
+.flex2 > div:nth-child(1){
+  background: #8eadde;
+  padding: 20px;
+  order: 1;
+}
+
+.flex2 > div:nth-child(2){
+  background: #b3c6f2;
+  padding: 20px;
+  order: 2;
+}
+.flex2 > div:nth-child(3){
+  background: #bfe2f2;
+  padding: 20px;
+  order: 3;
+}
+
+.flex2 > div:hover {
+    width: 200px;
+}
+
+@media all and (max-width: 800px) {
+    #flex2 {
+        width: auto;
+        height: auto;
+    }
+}
