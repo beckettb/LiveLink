@@ -1,9 +1,9 @@
 .contactbox{
-  background-color: aliceblue;
+  background-color: rgba(0, 68, 102, 0.8);
   padding: 20px;
   border-radius: 10px;
 }
 
 .form-group{
-  background-color: aliceblue;
+  background-color: rgba(0, 68, 102, 0);
 }

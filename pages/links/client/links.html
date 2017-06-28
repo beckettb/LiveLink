@@ -1,7 +1,4 @@
 <template name="links">
-  <div class="jumbotron">
-		<h2>Your links</h2>
-	</div>
 
   {{#if currentUser}}
     {{> setstatus}}
@@ -16,13 +13,13 @@
 <template name="setstatus">
   <form>
     <div class="userbox">
-      <label> Your username </label>
+      <label class="whitetext"> Your username </label>
       <br>
       <input type="text" class="form-control" id="youruser" placeholder="Enter your username here, it will be shown to all users of this site alongside your status once you set it.">
       <br>
     </div>
     <div class="statusbox">
-      <label for="formGroupExampleInput">Your status:</label>
+      <label for="formGroupExampleInput" class="whitetext">Your status:</label>
       <input type="text" class="form-control" id="yourstatus" placeholder="Enter your status here, it will be broadcast to all users of this site once you set it.">
       <button id="setstatus" class="btn btn-primary"> Set status
       </button>
@@ -33,8 +30,8 @@
 <template name="showyour">
   <div class="userstatusbox">
     {{#each x in showing}}
-      <p><b>Your name is currently set to: "{{x.youruser}}""</b></p>
-      <p><b>Your status is currently set to: "{{x.yourstatus}}"</b></p>
+      <p class="whitetext"><b>Your name is currently set to: "{{x.youruser}}""</b></p>
+      <p class="whitetext"><b>Your status is currently set to: "{{x.yourstatus}}"</b></p>
     {{/each}}
   </div>
   <br>
@@ -42,7 +39,7 @@
 
 <template name="showevery">
   <div class="linkbox">
-    <p><b>Here are all links:</b></p>
+    <p class="whitetext"><b>Here are all links:</b></p>
     <div class="linktable">
       <table class="table table-bordered">
         <thead>

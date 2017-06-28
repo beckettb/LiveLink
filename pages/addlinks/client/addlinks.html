@@ -1,9 +1,4 @@
 <template name="addlinks">
-  <div class="jumbotron">
-		<h2>Add links</h2>
-    <i>Currently unavailable</i>
-	</div>
-
   {{#if currentUser}}
     {{> addlink}}
   {{else}}
@@ -16,7 +11,7 @@
   <form>
     <div class="contactbox">
       <div class="form-group">
-        <label for="formGroupExampleInput">Link contact's username:</label>
+        <label for="formGroupExampleInput" class="whitetext">Link contact's username:</label>
         <input type="text" class="form-control" id="username" placeholder="Enter a friend or colleague's username here to add them as a link">
         <button id="addlink" class="btn btn-primary"> Add link
         </button>

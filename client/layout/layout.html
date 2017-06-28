@@ -2,6 +2,13 @@
 
     <link href="stylesheet.css" rel="stylesheet" type="text/css">
 
+    <ul class="navibar">
+      <li class="navili"><a href="{{pathFor 'home'}} " class="navia">Home</a></li>
+      <li class="navili"><a href="{{pathFor 'links'}}" class="navia">Links</a></li>
+      <li class="navili"><a href="{{pathFor 'addlinks'}}" class="navia">Add links</a></li>
+      <li class="navili"><a href="{{pathFor 'contact'}}" class="navia">Contact</a></li>
+    </ul>
+
     <div class="container">
     {{> loginButtons}}
     </div>
@@ -9,14 +16,6 @@
   <div class="container">
 
     <h1>LiveLink</h1>
-    <ul>
-      <ul class="nav navbar-nav">
-        <li><a href="{{pathFor 'home'}}">Home</a></li>
-        <li><a href="{{pathFor 'links'}}">Links</a></li>
-        <li><a href="{{pathFor 'addlinks'}}">Add links</a></li>
-        <li><a href="{{pathFor 'contact'}}">Contact</a></li>
-      </ul>
-    </ul>
     {{> yield}}
   </div>
 </template>
