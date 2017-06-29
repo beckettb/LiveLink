@@ -2,6 +2,11 @@
 
     <link href="stylesheet.css" rel="stylesheet" type="text/css">
 
+    <!-- <div class="login" align=right style="margin-right: 20px;"> -->
+    <div class="login">
+        {{> loginButtons}}
+    </div>
+
     <ul class="navibar">
       <li class="navili"><a href="{{pathFor 'home'}} " class="navia">Home</a></li>
       <li class="navili"><a href="{{pathFor 'links'}}" class="navia">Links</a></li>
@@ -9,13 +14,13 @@
       <li class="navili"><a href="{{pathFor 'contact'}}" class="navia">Contact</a></li>
     </ul>
 
-    <div class="container">
-    {{> loginButtons}}
+    <br>
+    <div class="logodiv">
+      <img src="../images/logo2.png" width="312" height="93" class="logoimg">
     </div>
+    <br>
 
   <div class="container">
-
-    <h1>LiveLink</h1>
     {{> yield}}
   </div>
 </template>

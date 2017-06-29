@@ -20,6 +20,13 @@ body {
     background-color: #004466;
 }
 
+.logodiv {
+  margin-left: 0;
+}
+
+.login {
+}
+
 .whitetext {
   color: white;
 }
@@ -50,7 +57,6 @@ body {
 
 @media only screen and (orientation: portrait) {
     body {
-        background-color: pink;
-        color: purple;
+        background-color: lightblue;
     }
 }
