@@ -20,6 +20,10 @@ body {
     background-color: #004466;
 }
 
+label {
+  font-weight: normal !important;
+}
+
 .logodiv {
   margin-left: 0;
 }

@@ -15,7 +15,7 @@
 <template name="setstatus">
   <form>
     <div class="userbox">
-      <label class="whitetext"> Your username </label>
+      <label class="whitetext"> Your username: </label>
       <br>
       <input type="text" class="form-control" id="youruser" placeholder="Enter your username here, it will be shown to all users of this site alongside your status once you set it.">
       <br>
@@ -32,8 +32,8 @@
 <template name="showyour">
   <div class="userstatusbox">
     {{#each x in showing}}
-      <p class="whitetext"><b>Your name is currently set to: "{{x.youruser}}""</b></p>
-      <p class="whitetext"><b>Your status is currently set to: "{{x.yourstatus}}"</b></p>
+      <p class="whitetext">Your name is currently set to: "{{x.youruser}}"</p>
+      <p class="whitetext">Your status is currently set to: "{{x.yourstatus}}"</p>
     {{/each}}
   </div>
   <br>
@@ -41,7 +41,7 @@
 
 <template name="showevery">
   <div class="linkbox">
-    <p class="whitetext"><b>Here are all links:</b></p>
+    <p class="whitetext">Here are all links:</p>
     <div class="linktable">
       <table class="table table-bordered">
         <thead>
