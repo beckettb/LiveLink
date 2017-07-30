@@ -1,4 +1,4 @@
-Template.addlink.events({
+Template.addgroup.events({
   'click button'(elt,instance) {
     const username = instance.$('#username').val();
     instance.$('#username').val("");

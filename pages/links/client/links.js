@@ -1,8 +1,18 @@
-const links =
-  [
-    {name:"Link1"    , status: "status1" },
-    {name:"Link2" , status: "status2" }
-  ];
+  Template.showyour.onCreated(function() {
+  //this.state = new ReactiveDict();
+  Meteor.subscribe('everylink');
+  Meteor.subscribe('connections');
+  });
+
+  Template.showevery.onCreated(function() {
+  //this.state = new ReactiveDict();
+  Meteor.subscribe('everylink');
+  });
+
+  Template.linkrow.onCreated(function() {
+  //this.state = new ReactiveDict();
+  Meteor.subscribe('everylink');
+  });
 
   Template.setstatus.events({
     'click button'(elt,instance) {
@@ -10,37 +20,50 @@ const links =
       const youruser = instance.$('#youruser').val();
 
 
+
       const userId = Meteor.userId;
       elt.preventDefault();
       for(item of Connections.find().fetch()){Connections.remove(item._id)}; //removes previous entries
 
-      Meteor.call('connections.remove',)
 
       var insstatus = {yourstatus:yourstatus,
         youruser:youruser,
-        userId:userId,
         owner:Meteor.userId()
       };
-      Meteor.call('connections.insert',insstatus)
+      //Meteor.call('connections.insert',insstatus)
+      console.log("dir: ")
+      console.dir(this)
+      //Meteor.call('connections.update',insstatus)
       //Connections.insert(insstatus);
 
       var inseverylink = {yourstatus:yourstatus,
         youruser:youruser,
-        userId:userId,
-        owner:Meteor.userId()
       };
-      Meteor.call('everylink.insert',inseverylink)
+
+      if (Connections.findOne({owner:Meteor.userId()})){    //NOT WORKING, CHANGE
+        Meteor.call('connections.remove',) //CHANGE TO REMOVE ONLY THINGS FROM THIS USER
+        Meteor.call('connections.insert', inseverylink)
+      }
+
+      if (!Everylink.findOne({owner:Meteor.userId()})) {//if no post by this user
+        console.log("inserting"+JSON.stringify(inseverylink))
+        Meteor.call('everylink.insert',inseverylink)
+      }else {
+        Meteor.call('everylink.update',inseverylink)
+      }
 
       instance.$('#yourstatus').val("");
       instance.$('#youruser').val("");
+
       //Everylink.insert(inseverylink);
+
       //for(item of Everylink.find().fetch()){Everylink.remove(item._id)};
 
       //check if user beforehand
-      Contacts.insert({
-        name: "Not available yet",
-        userId: Meteor.userId()
-      });
+      // Contacts.insert({
+      //   name: "Not available yet",
+      //   userId: Meteor.userId()
+      // });
 
     }
   })
@@ -65,9 +88,3 @@ const links =
       }
     }
 })
-
-Template.links.helpers(
- {
-   links
- }
-)
