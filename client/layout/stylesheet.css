@@ -18,6 +18,7 @@ body {
     background-image:url("../images/bgtile.png");
     background-repeat: repeat;
     background-color: #004466;
+    color: white;
 }
 
 label {
@@ -33,6 +34,14 @@ label {
 
 .whitetext {
   color: white;
+}
+
+.blacktext {
+  color: black;
+}
+
+.greytext {
+  color: grey;
 }
 
 .navibar {

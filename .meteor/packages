@@ -30,3 +30,7 @@ reactive-dict@1.1.8
 shell-server
 google-config-ui
 twbs:bootstrap
+reactive-var
+easy:search
+easysearch:autosuggest
+easysearch:elasticsearch

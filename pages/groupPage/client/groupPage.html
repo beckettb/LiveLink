@@ -1,0 +1,105 @@
+<template name="groupPage">
+  <!--Show group data back to user-->
+  <!--{{_id}}-->
+  <div class="topGroupDiv">
+    {{> groupMain}}
+  </div>
+  {{#if currentUser}}
+    {{#if isMember}}
+      {{> boxOfLinks}}
+    {{else}}
+       <p align="center">You are not a member of this team.</p>
+    {{/if}}
+  {{else}}
+    <p align="center">You need to be signed in and be a member of this team in in order to access team features!</p>
+  {{/if}}
+</template>
+
+
+<template name="groupMain">
+  <div class="groupMainDiv box">
+    <h2 class="groupTitle">Team: {{groupname}}</h2>
+    <hr>
+    <div class="descriptionBox">
+      Location: {{grouploc}}<br>
+      Description: {{groupdesc}}<br>
+        <div class="joinButton">
+          {{#if currentUser}}
+            {{#if isMember}}
+              {{#if isGroupOwner}}
+                <button id="js-editGroup" class="editGroup">Edit Group</button>
+              {{/if}}
+            {{else}}
+              <button id="js-requestjoingroup" class="js-joingroupbtn">Join group</button>
+            {{/if}}
+          {{/if}}
+        </div>
+    </div>
+    <!--check if user is group member, if they are show the following-->
+    <!--if not-->
+  </div>
+
+  <div class="groupEditDiv">
+      <h2 class="groupTitle-edit">Team: <input type="text" class="editgroupname" value="{{groupname}}"></h2>
+    <hr>
+    <div class="descriptionBox">
+      Description: <input type="text" class="editgroupdesc" value="{{groupdesc}}">
+      Location: <input type="text" class="editgrouploc" value="{{grouploc}}">
+    </div>
+    <button id="js-saveGroup" class="js-savegroup">Save My Changes</button>
+  </div>
+</template>
+
+<template name="boxOfLinks">
+  <div class="linkbox">
+    <p class="whitetext">Here are all links:</p>
+    <div class="linktable">
+      <table class="table table-bordered">
+        <thead>
+          <tr><th>Name</th><th>Status</th></tr>
+        </thead>
+        {{#each item in showinglinks}}
+        <tbody>
+            {{> grouplinkrow l=item}}
+        </tbody>
+        {{/each}}
+      </table>
+    </div>
+    <!-- {{#each x in showingevery}}
+      <p>Name: {{x.youruser}} Status: {{x.yourstatus}}</p>
+    {{/each}} -->
+  </div>
+</template>
+
+
+<template name="grouplinkrow">
+   <tr>
+     {{#if l.youruser}}
+        <td>{{l.youruser}}</td>
+        {{#if l.yourstatus}}
+           <td>{{l.yourstatus}}
+             {{#if isLinkOwner l}}
+                &nbsp;<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+             {{/if}}
+           </td>
+        {{else}}
+            <td class="greytext"><i>no status available</i>&nbsp;<span class="glyphicon glyphicon-remove blacktext" aria-hidden="true"></span></td>
+        {{/if}}
+     {{/if}}
+
+   	  <!-- <td>{{l.youruser}}</td>
+   	  <td>{{l.yourstatus}}&nbsp;<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td> -->
+   </tr>
+</template>
+
+<!--
+
+<template name="groupEdit">
+  <h2 class="groupTitle">Team: <input type="text" class="editgroupname" value="{{groupname}}"></h2>
+  <hr>
+  <div class="descriptionBox">
+    Description: <input type="text" class="editgroupdesc" value="{{groupdesc}}">
+    Location: <input type="text" class="editgrouploc" value="{{grouploc}}">
+  </div>
+  <button id="saveGroup" class="btn btn-lg btn-primary"><h-c>Save My Changes</h-c></button>
+</template> -->

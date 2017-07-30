@@ -1,9 +1,11 @@
-<template name="links">
+<template name="status">
 
   {{#if currentUser}}
     {{> setstatus}}
     {{> showyour}}
-    {{> showevery}}
+
+    <h4 align="center"><i>Note: if you remove your status from a group's page, it will
+    reappear on the groups page automatically if you set your status again.</i></h4>
   {{else}}
     <div class="whitetext">
     You aren't a current user, please log in to access the app!
@@ -31,15 +33,13 @@
 
 <template name="showyour">
   <div class="userstatusbox">
-    {{#each x in showing}}
-      <p class="whitetext">Your name is currently set to: "{{x.youruser}}"</p>
-      <p class="whitetext">Your status is currently set to: "{{x.yourstatus}}"</p>
-    {{/each}}
+      <p class="whitetext">Your name is currently set to: "{{showing.youruser}}"</p>
+      <p class="whitetext">Your status is currently set to: "{{showing.yourstatus}}"</p>
   </div>
   <br>
 </template>
 
-<template name="showevery">
+<!-- <template name="showevery">
   <div class="linkbox">
     <p class="whitetext">Here are all links:</p>
     <div class="linktable">
@@ -54,9 +54,6 @@
         {{/each}}
       </table>
     </div>
-    <!-- {{#each x in showingevery}}
-      <p>Name: {{x.youruser}} Status: {{x.yourstatus}}</p>
-    {{/each}} -->
   </div>
 </template>
 
@@ -66,8 +63,4 @@
    	  <td>{{l.youruser}}</td>
    	  <td>{{l.yourstatus}}&nbsp;<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
    </tr>
-</template>
-
-<template name="deletelink">
-
-</template>
+</template> -->
